@@ -2,11 +2,18 @@
   <section class="todo-container">
     <h1>Todo List</h1>
     <h2 class="">A place to store your to-dos</h2>
-    <form class="form">
-      <input type="text" placeholder="Filter your to-dos" />
+    <!-- <form class="form"> -->
+    <form class="form" #filterForm="ngForm" (input)="setSearchTerm(filterForm)">
+      <input
+        type="text"
+        placeholder="Filter your to-dos"
+        id="searchTerm"
+        name="searchTerm"
+        ngModel
+      />
     </form>
     <ol class="ordered-list">
-      <li *ngFor="let todo of todos">
+      <li *ngFor="let todo of filter(); index as i">
         <div class="list-item">
           <button class="complete-button" *ngIf="todo.completed === false">
             Complete
@@ -14,7 +21,7 @@
           <p class="task" [ngClass]="{ strike: todo.completed }">
             {{ todo.task }}
           </p>
-          <button class="delete">X</button>
+          <button class="delete" (click)="removeTask(i)">X</button>
         </div>
       </li>
     </ol>

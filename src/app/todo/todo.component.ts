@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../interfaces/todo';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-todo',
@@ -21,8 +22,30 @@ export class TodoComponent implements OnInit {
       completed: true,
     },
   ];
+  // added new
+  searchTerm: string;
+  //  ^ ^ ^
 
   constructor() {}
 
+  removeTask(index: number) {
+    this.todos.splice(index, 1);
+  }
+  // --------------------------
+  setSearchTerm(form: NgForm) {
+    this.searchTerm = form.value.searchTerm.trim().toLowerCase();
+  }
+
+  filter() {
+    if (!this.searchTerm) {
+      return this.todos;
+    } else {
+      return this.todos.filter((todo) => {
+        let currentTask = todo.task.toLowerCase().trim();
+        return currentTask.includes(this.searchTerm);
+      });
+    }
+  }
+  // ------------------------------------
   ngOnInit(): void {}
 }
