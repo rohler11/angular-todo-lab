@@ -1,0 +1,69 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-container {
+  background-color: white;
+  border-radius: 7px;
+  padding: 10px;
+  width: 75%;
+  margin-top: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+/* the * means everything within this container! */
+/* .todo-container * {
+  margin: 10px 0;
+} */
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add {
+  padding: 5px;
+  color: white;
+  background-color: #f857a6;
+  border-radius: 7px;
+  border: none;
+}
+
+.list-item {
+  display: flex;
+}
+
+.task {
+  flex: 1;
+}
+
+.complete-button {
+  background-color: white;
+  color: #ff69b4;
+  border: solid 1px;
+  border-color: #ff69b4;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+input {
+  border-radius: 5px;
+  border: solid 1px;
+  border-color: lightgray;
+  padding: 5px;
+}
+
+.delete {
+  border: none;
+  background-color: white;
+}
+
+.ordered-list {
+  margin-left: 20px;
+}
+
+.strike {
+  text-decoration: line-through;
+}
