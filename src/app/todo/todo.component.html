@@ -15,7 +15,11 @@
     <ol class="ordered-list">
       <li *ngFor="let todo of filter(); index as i">
         <div class="list-item">
-          <button class="complete-button" *ngIf="todo.completed === false">
+          <button
+            class="complete-button"
+            *ngIf="todo.completed === false"
+            (click)="completeTask(i)"
+          >
             <!--<button class="complete-button" *ngIf="todo.completed === false" (click)=""> -->
             Complete
           </button>
@@ -26,8 +30,14 @@
         </div>
       </li>
     </ol>
-    <form class="form">
-      <input type="text" placeholder="Add your to-do" />
+    <form class="form" #todoForm="ngForm" (ngSubmit)="addTask(todoForm)">
+      <input
+        type="text"
+        name="addTodo"
+        id="addTodo"
+        placeholder="Add your to-do"
+        ngModel
+      />
       <button class="add">Add</button>
     </form>
   </section>

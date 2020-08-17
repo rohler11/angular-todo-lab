@@ -32,22 +32,24 @@ export class TodoComponent implements OnInit {
     this.todos.splice(index, 1);
   }
   // ----------------------------
-  // trying to add a task v v
-  // i don't... know how to do things if there aren't direct notes to snipe from
-  // ----------------------------
 
-  // addTask(index: string) {
-  //   this.todos.push(index, 1)
-  // }
+  addTask(form: NgForm) {
+    let newTask: Todo = {
+      task: form.value.addTodo,
+      completed: false,
+    };
+    this.todos.push(newTask);
+  }
 
   // ----------------------------
   // complete task v v
   // it doesn't recognize dot notation? I'm not sure how to access it?
   // ----------------------------
 
-  // completeTask() {
-  //   return this.todos.completed === true;
-  // }
+  completeTask(index: number) {
+    return (this.todos[index].completed = true);
+    // return this.todos.value.completed === true;
+  }
 
   // ----------------------------
   setSearchTerm(form: NgForm) {
