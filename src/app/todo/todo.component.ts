@@ -31,7 +31,25 @@ export class TodoComponent implements OnInit {
   removeTask(index: number) {
     this.todos.splice(index, 1);
   }
-  // --------------------------
+  // ----------------------------
+  // trying to add a task v v
+  // i don't... know how to do things if there aren't direct notes to snipe from
+  // ----------------------------
+
+  // addTask(index: string) {
+  //   this.todos.push(index, 1)
+  // }
+
+  // ----------------------------
+  // complete task v v
+  // it doesn't recognize dot notation? I'm not sure how to access it?
+  // ----------------------------
+
+  // completeTask() {
+  //   return this.todos.completed === true;
+  // }
+
+  // ----------------------------
   setSearchTerm(form: NgForm) {
     this.searchTerm = form.value.searchTerm.trim().toLowerCase();
   }
@@ -46,6 +64,7 @@ export class TodoComponent implements OnInit {
       });
     }
   }
+
   // ------------------------------------
   ngOnInit(): void {}
 }

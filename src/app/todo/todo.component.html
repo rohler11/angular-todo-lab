@@ -16,6 +16,7 @@
       <li *ngFor="let todo of filter(); index as i">
         <div class="list-item">
           <button class="complete-button" *ngIf="todo.completed === false">
+            <!--<button class="complete-button" *ngIf="todo.completed === false" (click)=""> -->
             Complete
           </button>
           <p class="task" [ngClass]="{ strike: todo.completed }">
